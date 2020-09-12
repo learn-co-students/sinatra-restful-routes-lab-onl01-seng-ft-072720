@@ -1,3 +1,4 @@
+require "pry"
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
@@ -23,12 +24,13 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  get '/recipes/:id/edit' do  #load edit form
+  get '/recipes/:id/edit' do 
+
     @recipe = Recipe.find_by_id(params[:id])
     erb :edit
   end
  
-  patch '/recipes/:id/' do #edit action
+  patch '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.name = params[:name]
     @recipe.ingredients = params[:ingredients]
