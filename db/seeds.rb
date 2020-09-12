@@ -1,0 +1,1 @@
+Recipe.create(name: "Chicken Breast", ingredients: "Chicken Breast, salt, pepper", cook_time: "8-10 minutes")
