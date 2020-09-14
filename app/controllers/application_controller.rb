@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
   patch '/recipes/:id' do
     current_recipe
     @recipe.update(concise_params)
-    redirect to 'recipes/#{@recipe.id}'
+    redirect to "recipes/#{@recipe.id}"
   end
 
 
